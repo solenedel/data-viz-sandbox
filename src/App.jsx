@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import DoughnutChart from "./Charts/DoughnutChart";
 
 function App() {
   // test getting API data from back end
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3>My react project</h3>
+      <DoughnutChart />
     </div>
   );
 }
