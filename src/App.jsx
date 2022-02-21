@@ -6,7 +6,7 @@ import BarChart from "./Charts/BarChart";
 function App() {
   return (
     <div className="App">
-      <DoughnutChart />
+      {/* <DoughnutChart /> */}
       <BarChart />
     </div>
   );

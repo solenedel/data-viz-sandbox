@@ -6,14 +6,14 @@ const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 const datasets = [
   {
-    label: "Dataset 1",
+    label: "Red",
     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    backgroundColor: "rgba(255, 99, 132, 0.5)",
+    backgroundColor: "rgba(255, 99, 132, 0.8)",
   },
   {
-    label: "Dataset 2",
+    label: "Blue",
     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    backgroundColor: "rgba(53, 162, 235, 0.5)",
+    backgroundColor: "rgba(53, 162, 235, 0.8)",
   },
 ];
 
@@ -22,10 +22,23 @@ const data = {
   datasets,
 };
 
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Chart.js Bar Chart",
+    },
+  },
+};
+
 const BarChart = () => {
   return (
-    <div>
-      <Bar data={data} />
+    <div style={{ width: `70vw` }}>
+      <Bar data={data} options={options} />
     </div>
   );
 };
