@@ -24,13 +24,49 @@ const data = {
 
 export const options = {
   responsive: true,
+  scales: {
+    y: {
+      title: {
+        display: true,
+        text: "Y axis label",
+        font: {
+          size: 30,
+          weight: 700,
+        },
+      },
+      ticks: {
+        font: {
+          size: 20,
+        },
+      },
+    },
+    x: {
+      title: {
+        display: true,
+        text: "X axis label",
+        font: {
+          size: 30,
+          weight: 700,
+        },
+      },
+      ticks: {
+        font: {
+          size: 20,
+        },
+      },
+    },
+  },
   plugins: {
     legend: {
       position: "top",
     },
     title: {
       display: true,
-      text: "Chart.js Bar Chart",
+      text: "My bar chart",
+      font: {
+        size: 30,
+        weight: 700,
+      },
     },
   },
 };
