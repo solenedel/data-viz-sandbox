@@ -1,12 +1,13 @@
 import React from "react";
 import "chart.js/auto";
-import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 const data = {
   labels: ["Red", "Blue", "Green", "Yellow", "Orange", "Purple"],
   datasets: [
     {
       data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: ["red", "blue", "green", "yellow", "orange", "purple"],
     },
   ],
 };
@@ -14,7 +15,7 @@ const data = {
 const DoughnutChart = () => {
   return (
     <div style={{ width: `400px` }}>
-      <Doughnut data={data} />
+      <Bar data={data} />
     </div>
   );
 };
