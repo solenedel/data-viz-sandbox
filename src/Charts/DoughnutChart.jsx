@@ -1,4 +1,5 @@
 import React from "react";
+import "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
 const data = {
@@ -12,8 +13,7 @@ const data = {
 
 const DoughnutChart = () => {
   return (
-    <div>
-      doughnut
+    <div style={{ width: `400px` }}>
       <Doughnut data={data} />
     </div>
   );

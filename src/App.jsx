@@ -3,6 +3,7 @@ import axios from "axios";
 import DoughnutChart from "./Charts/DoughnutChart";
 
 function App() {
+  /*
   // test getting API data from back end
   useEffect(() => {
     const options = {
@@ -27,6 +28,7 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, []);
+  */
 
   return (
     <div className="App">
