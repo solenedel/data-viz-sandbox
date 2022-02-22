@@ -67,3 +67,16 @@ input {
   font-size: 22px;
   text-align: center;
 }
+
+button {
+  font-size: 22px;
+  background: #CEFB9C;
+  border: solid #9DEE42 3px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background: #9DEE42;
+}
