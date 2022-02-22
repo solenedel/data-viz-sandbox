@@ -1,8 +1,20 @@
-import React, { useState } from "react";
-import { generateFakeData } from "../helpers/generateFakeData";
+import React from "react";
+import { useDataOptionForm } from "../hooks/useDataOptionForm";
 
 const DataOptionForm = () => {
- 
+  // use filter form logic
+  const {
+    numOfDataPoints,
+    XRange,
+    YRange,
+    handleClearForm,
+    handleFormSubmit,
+    handleNumOfPointsChange,
+    handleXRangeMaxChange,
+    handleXRangeMinChange,
+    handleYRangeMaxChange,
+    handleYRangeMinChange,
+  } = useDataOptionForm();
 
   return (
     <form action="submit" onSubmit={handleFormSubmit}>
@@ -20,14 +32,14 @@ const DataOptionForm = () => {
         <input
           type="number"
           placeholder="min"
-          value={Xrange.min}
+          value={XRange.min}
           onChange={handleXRangeMinChange}
         />{" "}
         to{" "}
         <input
           type="number"
           placeholder="max"
-          value={Xrange.max}
+          value={XRange.max}
           onChange={handleXRangeMaxChange}
         />
       </label>
@@ -36,14 +48,14 @@ const DataOptionForm = () => {
         <input
           type="number"
           placeholder="min"
-          value={Yrange.min}
+          value={YRange.min}
           onChange={handleYRangeMinChange}
         />{" "}
         to{" "}
         <input
           type="number"
           placeholder="max"
-          value={Yrange.max}
+          value={YRange.max}
           onChange={handleYRangeMaxChange}
         />
       </label>

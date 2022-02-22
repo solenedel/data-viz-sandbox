@@ -3,6 +3,8 @@ import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import { generateFakeData } from "../helpers/generateFakeData";
 
+const {numOfDataPoints, Xrange, Y}
+
 const labels = generateFakeData(100, 0, 300);
 
 const datasets = [
