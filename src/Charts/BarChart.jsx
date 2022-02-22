@@ -74,7 +74,7 @@ export const options = {
 
 const BarChart = () => {
   return (
-    <div style={{ width: `90vw` }}>
+    <div style={{ width: `80vw`, marginBottom: `100px` }}>
       <Bar data={data} options={options} />
     </div>
   );

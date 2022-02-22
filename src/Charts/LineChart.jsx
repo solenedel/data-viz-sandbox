@@ -26,7 +26,7 @@ const data = {
 
 const LineChart = () => {
   return (
-    <div style={{ width: `90vw` }}>
+    <div style={{ width: `80vw` }}>
       <Line data={data} />
     </div>
   );
