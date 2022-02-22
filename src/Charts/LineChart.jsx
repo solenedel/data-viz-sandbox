@@ -1,19 +1,9 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import faker from "@faker-js/faker";
+import { generateFakeData } from "../helpers/generateFakeData";
 
-// generate lots of fake data for X axis
-const generateXdata = () => {
-  const Xdata = [];
-
-  for (let i = 0; i < 200; i += 1) {
-    Xdata.push(faker.datatype.number({ min: 0, max: 100 }));
-  }
-  console.log(Xdata);
-  return Xdata;
-};
-
-const labels = generateXdata();
+const labels = generateFakeData(50, 0, 10);
 
 const datasets = [
   {
