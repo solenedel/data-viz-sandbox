@@ -46,20 +46,26 @@ const DataOptionForm = () => {
       <h2>Fake data settings</h2>
       <label htmlFor="numOfPoints">
         Number of data points:{" "}
-        <input type="number" onChange={handleNumOfPointsChange} />
+        <input
+          type="number"
+          onChange={handleNumOfPointsChange}
+          value={numOfDataPoints}
+        />
       </label>
       <label htmlFor="Xrange">
         X-axis range: &nbsp;&nbsp; from{" "}
         <input
           type="number"
           placeholder="min"
+          value={Xrange.min}
           onChange={handleXRangeMinChange}
         />{" "}
         to{" "}
         <input
           type="number"
           placeholder="max"
-          onChange={handleYRangeMaxChange}
+          value={Xrange.max}
+          onChange={handleXRangeMaxChange}
         />
       </label>
       <label htmlFor="Yrange">
@@ -67,12 +73,14 @@ const DataOptionForm = () => {
         <input
           type="number"
           placeholder="min"
+          value={Yrange.min}
           onChange={handleYRangeMinChange}
         />{" "}
         to{" "}
         <input
           type="number"
           placeholder="max"
+          value={Yrange.max}
           onChange={handleYRangeMaxChange}
         />
       </label>
