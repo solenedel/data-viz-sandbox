@@ -61,6 +61,9 @@ input {
   height: 40px;
   width: 80px;
   margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: #E43333;
 }
 
 ::placeholder {
@@ -70,7 +73,7 @@ input {
 
 button {
   font-size: 22px;
-  background: #CEFB9C;
+  background: #ddffb7;
   border: solid #9DEE42 3px;
   border-radius: 5px;
   padding: 5px;
@@ -79,4 +82,19 @@ button {
 
 button:hover {
   background: #C5FB8A;
+}
+
+button#clear-btn {
+  background: #B0FFFF;
+  border: solid #33E4E4 3px;
+}
+
+button#clear-btn:hover {
+  background: #93ffff;
+}
+
+span.buttons {
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
 }
