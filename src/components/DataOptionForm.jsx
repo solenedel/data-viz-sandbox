@@ -5,21 +5,68 @@ const DataOptionForm = () => {
   const [Xrange, setXRange] = useState({ min: 0, max: 0 });
   const [Yrange, setYRange] = useState({ min: 0, max: 0 });
 
+  // use Math.ABS to get positive nums for data points
+
+  const handleNumOfPointsChange = (e) => {
+    // only accept positive values
+    setNumOfDataPoints(Math.abs(Number(e.target.value)));
+  };
+
+  const handleXRangeMinChange = (e) => {
+    setXRange({ ...Xrange, min: Number(e.target.value) });
+  };
+  const handleXRangeMaxChange = (e) => {
+    setXRange({ ...Xrange, max: Number(e.target.value) });
+  };
+
+  const handleYRangeMinChange = (e) => {
+    setYRange({ ...Yrange, min: Number(e.target.value) });
+  };
+
+  const handleYRangeMaxChange = (e) => {
+    setYRange({ ...Yrange, max: Number(e.target.value) });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("DATA SETTINGS: ", numOfDataPoints, Yrange, Xrange);
+  };
+
   return (
-    <form action="submit">
+    <form action="submit" onSubmit={handleFormSubmit}>
       <h2>Fake data settings</h2>
       <label htmlFor="numOfPoints">
-        Number of data points: <input type="number" />
+        Number of data points:{" "}
+        <input type="number" onChange={handleNumOfPointsChange} />
       </label>
       <label htmlFor="Xrange">
         X-axis range: &nbsp;&nbsp; from{" "}
-        <input type="number" placeholder="min" /> to{" "}
-        <input type="number" placeholder="max" />
+        <input
+          type="number"
+          placeholder="min"
+          onChange={handleXRangeMinChange}
+        />{" "}
+        to{" "}
+        <input
+          type="number"
+          placeholder="max"
+          onChange={handleYRangeMaxChange}
+        />
       </label>
       <label htmlFor="Yrange">
         Y-axis range: &nbsp;&nbsp; from{" "}
-        <input type="number" placeholder="min" /> to{" "}
-        <input type="number" placeholder="max" />
+        <input
+          type="number"
+          placeholder="min"
+          onChange={handleYRangeMinChange}
+        />{" "}
+        to{" "}
+        <input
+          type="number"
+          placeholder="max"
+          onChange={handleYRangeMaxChange}
+        />
       </label>
       <button type="submit">use these settings</button>
     </form>
