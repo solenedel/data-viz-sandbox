@@ -1,6 +1,6 @@
 import { generateFakeData } from "../helpers/generateFakeData";
 
-export const useBarGraph = () => {
+export const useBarChart = () => {
   const labels = generateFakeData(100, 0, 300);
 
   const datasets = [
