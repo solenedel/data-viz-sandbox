@@ -1,4 +1,5 @@
 import React from "react";
+import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import faker from "@faker-js/faker";
 
@@ -7,7 +8,7 @@ const generateXdata = () => {
   const Xdata = [];
 
   for (let i = 0; i < 300; i += 1) {
-    Xdata.push(faker.company.suffixes());
+    Xdata.push(faker.datatype.number({ min: 0, max: 100 }));
   }
   console.log(Xdata);
   return Xdata;
