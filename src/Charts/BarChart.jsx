@@ -1,16 +1,14 @@
 import React from "react";
 import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import faker from "@faker-js/faker";
 import { generateFakeData } from "../helpers/generateFakeData";
 
 const labels = generateFakeData(100, 0, 300);
-// const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 const datasets = [
   {
     label: "Red",
-    data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    data: generateFakeData(labels.length, 0, 1000),
     backgroundColor: "rgba(255, 99, 132, 0.8)",
   },
   // {
