@@ -6,8 +6,8 @@ import faker from "@faker-js/faker";
 const generateXdata = () => {
   const Xdata = [];
 
-  for (let i = 0; i < 100; i += 1) {
-    Xdata.push(faker.datatype.number({ min: 0, max: 100 }));
+  for (let i = 0; i < 300; i += 1) {
+    Xdata.push(faker.company.suffixes());
   }
   console.log(Xdata);
   return Xdata;
@@ -22,11 +22,11 @@ const datasets = [
     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
     backgroundColor: "rgba(255, 99, 132, 0.8)",
   },
-  {
-    label: "Blue",
-    data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    backgroundColor: "rgba(53, 162, 235, 0.8)",
-  },
+  // {
+  //   label: "Blue",
+  //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+  //   backgroundColor: "rgba(53, 162, 235, 0.8)",
+  // },
 ];
 
 const data = {
