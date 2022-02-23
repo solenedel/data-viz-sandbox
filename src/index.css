@@ -108,3 +108,21 @@ span.buttons {
   display: flex;
   justify-content: space-evenly;
 }
+
+@media screen and (min-width: 600px) {
+  section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 40vw;
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
+
+  button {
+    font-size: 24px;
+  }
+}
