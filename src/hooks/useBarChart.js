@@ -1,12 +1,12 @@
 import { generateFakeData } from "../helpers/generateFakeData";
 
-export const useBarChart = () => {
-  const labels = generateFakeData(100, 0, 300);
+export const useBarChart = (numOfDataPoints, XRange, YRange) => {
+  const labels = generateFakeData(numOfDataPoints, XRange.min, XRange.max);
 
   const datasets = [
     {
       label: "Red",
-      data: generateFakeData(labels.length, 0, 1000),
+      data: generateFakeData(labels.length, YRange.min, YRange.max),
       backgroundColor: "rgba(255, 99, 132, 0.8)",
     },
   ];
