@@ -20,7 +20,7 @@ const DataOptionForm = () => {
   return (
     <section>
       <form action="submit" onSubmit={handleFormSubmit}>
-        <h2>Fake data settings</h2>
+        <h2>data settings</h2>
         <label htmlFor="numOfPoints">
           Number of data points:{" "}
           <input
@@ -30,7 +30,7 @@ const DataOptionForm = () => {
           />
         </label>
         <label htmlFor="Xrange">
-          X-axis range: &nbsp;&nbsp; from{" "}
+          X-axis: &nbsp; from{" "}
           <input
             type="number"
             placeholder="min"
@@ -46,7 +46,7 @@ const DataOptionForm = () => {
           />
         </label>
         <label htmlFor="Yrange">
-          Y-axis range: &nbsp;&nbsp; from{" "}
+          Y-axis: &nbsp; from{" "}
           <input
             type="number"
             placeholder="min"
@@ -62,9 +62,9 @@ const DataOptionForm = () => {
           />
         </label>
         <span className="buttons">
-          <button type="submit">confirm settings</button>
+          <button type="submit">confirm</button>
           <button type="button" id="clear-btn" onClick={handleClearForm}>
-            clear settings
+            clear
           </button>
         </span>
       </form>

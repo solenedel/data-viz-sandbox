@@ -8,7 +8,7 @@ const BarChart = ({ numOfDataPoints, XRange, YRange }) => {
   const { data, options } = useBarChart(numOfDataPoints, XRange, YRange);
 
   return (
-    <div style={{ width: `80vw`, marginBottom: `100px` }}>
+    <div style={{ width: `65vw`, marginBottom: `100px` }}>
       <Bar data={data} options={options} />
     </div>
   );
