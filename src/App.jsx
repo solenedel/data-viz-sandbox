@@ -21,8 +21,11 @@ function App() {
     >
       <div className="App">
         <h1>Chart.js sandbox</h1>
-        <DataOptionForm />
-        <BarChart />
+        <div className="main-container">
+          <DataOptionForm />
+          <BarChart />
+        </div>
+
         {/* <LineChart /> */}
       </div>
     </AppContext.Provider>
