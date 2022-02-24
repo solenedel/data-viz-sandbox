@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-// import BarChart from "./Charts/BarChart";
+import BarChart from "./Charts/BarChart";
 // import LineChart from "./Charts/LineChart";
 import DataOptionForm from "./components/DataOptionForm";
 import { AppContext } from "./context/context";
+// import BarChart from "./Charts/BarChart";
 
 function App() {
   // states used in app context
@@ -21,7 +22,7 @@ function App() {
       <div className="App">
         <h1>Chart.js sandbox</h1>
         <DataOptionForm />
-        {/* <BarChart /> */}
+        <BarChart />
         {/* <LineChart /> */}
       </div>
     </AppContext.Provider>

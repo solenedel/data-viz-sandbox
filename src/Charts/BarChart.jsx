@@ -1,10 +1,16 @@
 import React from "react";
 import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import { useAppContext } from "../context/context";
 import { useBarChart } from "../hooks/useBarChart";
-// import { generateFakeData } from "../helpers/generateFakeData";
 
-const BarChart = ({ numOfDataPoints, XRange, YRange }) => {
+const BarChart = () => {
+  const { numOfDataPointsContext, XRangeContext, YRangeContext } =
+    useAppContext();
+  const [numOfDataPoints, setNumOfDataPoints] = numOfDataPointsContext;
+  const [XRange, setXRange] = XRangeContext;
+  const [YRange, setYRange] = YRangeContext;
+
   const { data, options } = useBarChart(numOfDataPoints, XRange, YRange);
 
   return (

@@ -1,6 +1,13 @@
 import { generateFakeData } from "../helpers/generateFakeData";
+import { useAppContext } from "../context/context";
 
-export const useBarChart = (numOfDataPoints, XRange, YRange) => {
+export const useBarChart = () => {
+  const { numOfDataPointsContext, XRangeContext, YRangeContext } =
+    useAppContext();
+  const [numOfDataPoints, setNumOfDataPoints] = numOfDataPointsContext;
+  const [XRange, setXRange] = XRangeContext;
+  const [YRange, setYRange] = YRangeContext;
+
   const labels = generateFakeData(numOfDataPoints, XRange.min, XRange.max);
 
   const datasets = [

@@ -1,5 +1,4 @@
 import React from "react";
-import BarChart from "../Charts/BarChart";
 import { useDataOptionForm } from "../hooks/useDataOptionForm";
 
 const DataOptionForm = () => {
@@ -68,11 +67,6 @@ const DataOptionForm = () => {
           </button>
         </span>
       </form>
-      <BarChart
-        numOfDataPoints={numOfDataPoints}
-        XRange={XRange}
-        YRange={YRange}
-      />
     </section>
   );
 };
