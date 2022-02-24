@@ -1,11 +1,14 @@
 // custom hook with form logic
-import { useState } from "react";
+import { useAppContext } from "../context/context";
 
 export const useDataOptionForm = () => {
-  // use null or zero for starting values??
-  const [numOfDataPoints, setNumOfDataPoints] = useState(0);
-  const [XRange, setXRange] = useState({ min: 0, max: 0 });
-  const [YRange, setYRange] = useState({ min: 0, max: 0 });
+  const { numOfDataPointsContext, XRangeContext, YRangeContext } =
+    useAppContext();
+  const [numOfDataPoints, setNumOfDataPoints] = numOfDataPointsContext;
+  const [XRange, setXRange] = XRangeContext;
+  const [YRange, setYRange] = YRangeContext;
+
+  // ----------------- form handlers below ------------------ //
 
   const handleNumOfPointsChange = (e) => {
     // only accept positive values
