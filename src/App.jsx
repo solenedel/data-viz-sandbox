@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BarChart from "./Charts/BarChart";
 // import LineChart from "./Charts/LineChart";
 import DataOptionForm from "./components/DataOptionForm";
@@ -10,6 +10,38 @@ function App() {
   const [numOfDataPoints, setNumOfDataPoints] = useState(0);
   const [XRange, setXRange] = useState({ min: 0, max: 0 });
   const [YRange, setYRange] = useState({ min: 0, max: 0 });
+
+  // persist data settings on page reload
+  useEffect(() => {
+    const storedNumOfPoints = localStorage.getItem("numOfPoints");
+    const storedXRange = localStorage.getItem("XRange");
+    const storedYRange = localStorage.getItem("YRange");
+
+    if (storedNumOfPoints) {
+      setNumOfDataPoints(storedNumOfPoints);
+    }
+
+    if (storedXRange) {
+      setXRange(storedXRange);
+    }
+
+    if (storedYRange) {
+      setXRange(storedYRange);
+    }
+  }, []);
+
+  // save data settings to local storage
+  useEffect(() => {
+    localStorage.setItem("numOfPoints", numOfDataPoints);
+  }, [numOfDataPoints]);
+
+  useEffect(() => {
+    localStorage.setItem("XRange", XRange);
+  }, [XRange]);
+
+  useEffect(() => {
+    localStorage.setItem("YRange", YRange);
+  }, [YRange]);
 
   return (
     <AppContext.Provider
