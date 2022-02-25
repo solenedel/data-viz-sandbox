@@ -1,5 +1,4 @@
 # TO DO
 
 ## Debug:
-- persisting state of data settings 
-- warning: a component is changing a controlled component
+- persisting state of data settings - only number of points is being persisted

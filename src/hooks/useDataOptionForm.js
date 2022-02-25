@@ -16,18 +16,18 @@ export const useDataOptionForm = () => {
   };
 
   const handleXRangeMinChange = (e) => {
-    setXRange({ ...XRange, min: Number(e.target.value) });
+    setXRange((prev) => ({ ...prev, min: Number(e.target.value) }));
   };
   const handleXRangeMaxChange = (e) => {
-    setXRange({ ...XRange, max: Number(e.target.value) });
+    setXRange((prev) => ({ ...prev, max: Number(e.target.value) }));
   };
 
   const handleYRangeMinChange = (e) => {
-    setYRange({ ...YRange, min: Number(e.target.value) });
+    setYRange((prev) => ({ ...prev, min: Number(e.target.value) }));
   };
 
   const handleYRangeMaxChange = (e) => {
-    setYRange({ ...YRange, max: Number(e.target.value) });
+    setYRange((prev) => ({ ...prev, max: Number(e.target.value) }));
   };
 
   const handleFormSubmit = (e) => {
@@ -42,8 +42,8 @@ export const useDataOptionForm = () => {
     setYRange({ min: 0, max: 0 });
     setXRange({ min: 0, max: 0 });
     setNumOfDataPoints(0);
-    console.log("CLEARED FORM: ", numOfDataPoints, YRange, XRange);
   };
+
   return {
     numOfDataPoints,
     XRange,

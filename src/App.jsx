@@ -22,13 +22,22 @@ function App() {
     }
 
     if (storedXRange) {
-      setXRange({ ...storedXRange });
+      setXRange((prev) => ({ ...prev }));
     }
 
     if (storedYRange) {
-      setYRange({ ...storedYRange });
+      setYRange((prev) => ({ ...prev }));
     }
     // console.log("numOfDataPoints", numOfDataPoints);
+
+    console.log(
+      "RELOAD PAGE: num of points: ",
+      numOfDataPoints,
+      "XRange",
+      XRange,
+      "YRange",
+      YRange
+    );
   }, []);
 
   // save data settings to local storage
