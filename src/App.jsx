@@ -28,6 +28,7 @@ function App() {
     if (storedYRange) {
       setXRange(storedYRange);
     }
+    // console.log("numOfDataPoints", numOfDataPoints);
   }, []);
 
   // save data settings to local storage
