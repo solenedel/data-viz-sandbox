@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import BarChart from "./Charts/BarChart";
-// import LineChart from "./Charts/LineChart";
+import LineChart from "./Charts/LineChart";
 import DataOptionForm from "./components/DataOptionForm";
 import { AppContext } from "./context/context";
-// import BarChart from "./Charts/BarChart";
 
 function App() {
   // states used in app context
@@ -14,21 +13,24 @@ function App() {
   // persist data settings on page reload
   useEffect(() => {
     const storedNumOfPoints = localStorage.getItem("numOfPoints");
-    const storedXRange = localStorage.getItem("XRange");
-    const storedYRange = localStorage.getItem("YRange");
+
+    const JSONdataX = localStorage.getItem("XRange");
+    const storedXRange = JSON.parse(JSONdataX);
+
+    const JSONdataY = localStorage.getItem("YRange");
+    const storedYRange = JSON.parse(JSONdataY);
 
     if (storedNumOfPoints) {
       setNumOfDataPoints(storedNumOfPoints);
     }
 
     if (storedXRange) {
-      setXRange((prev) => ({ ...prev }));
+      setXRange({ ...storedXRange });
     }
 
     if (storedYRange) {
-      setYRange((prev) => ({ ...prev }));
+      setYRange({ ...storedYRange });
     }
-    // console.log("numOfDataPoints", numOfDataPoints);
 
     console.log(
       "RELOAD PAGE: num of points: ",
@@ -46,11 +48,13 @@ function App() {
   }, [numOfDataPoints]);
 
   useEffect(() => {
-    localStorage.setItem("XRange", XRange);
+    const JSONdata = JSON.stringify(XRange);
+    localStorage.setItem("XRange", JSONdata);
   }, [XRange]);
 
   useEffect(() => {
-    localStorage.setItem("YRange", YRange);
+    const JSONdata = JSON.stringify(YRange);
+    localStorage.setItem("YRange", JSONdata);
   }, [YRange]);
 
   return (
@@ -68,7 +72,7 @@ function App() {
           <BarChart />
         </div>
 
-        {/* <LineChart /> */}
+        <LineChart />
       </div>
     </AppContext.Provider>
   );
