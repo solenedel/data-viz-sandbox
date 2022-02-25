@@ -22,11 +22,11 @@ function App() {
     }
 
     if (storedXRange) {
-      setXRange(storedXRange);
+      setXRange({ ...storedXRange });
     }
 
     if (storedYRange) {
-      setXRange(storedYRange);
+      setYRange({ ...storedYRange });
     }
     // console.log("numOfDataPoints", numOfDataPoints);
   }, []);

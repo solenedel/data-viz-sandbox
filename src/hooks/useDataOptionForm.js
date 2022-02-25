@@ -33,7 +33,9 @@ export const useDataOptionForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // need to check that max > min ?
-    console.log("DATA SETTINGS: ", numOfDataPoints, YRange, XRange);
+    console.log("num of data points: ", numOfDataPoints);
+    console.log("Xrange: ", XRange);
+    console.log("Yrange: ", YRange);
   };
 
   const handleClearForm = () => {
